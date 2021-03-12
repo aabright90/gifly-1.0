@@ -1,0 +1,88 @@
+#root > div {
+  display: flex;
+  height: 100vh;
+}
+
+body {
+  background-image: url('./background-gif.jpg');
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.left-scene {
+  width: 66%;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+
+  .form-search {
+    padding: 38px 40px 60px 80px;
+    border: none;
+    font-size: 2.6em;
+    box-shadow: none;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.801);
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .gif-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+  }
+
+  .gif-container img {
+    height: 200px;
+  }
+
+  input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+::placeholder {
+  color:rgba(0, 0, 0, 0.801);
+}
+
+  &:before {
+    content: '\F002';
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    font-family: FontAwesome;
+    font-size: 2.6em;
+    opacity: 0.4;
+  }
+
+  .selected-gif {
+    text-align: center;
+    display: flex;
+    flex-grow: 1;
+    height: calc(100vh - 232px);
+    .gif {
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+    }
+  }
+}
+
+.right-scene {
+  width: 33%;
+  background-color: #f5c8eb;
+  overflow: scroll;
+
+  .gif-list {
+    column-count: 2;
+    padding: 5px;
+
+    .gif {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+}
